@@ -58,25 +58,14 @@ curl -L -o smollm2-135m-q4_k_m.gguf \
 
 ---
 
-## Use Case: Automated Log Triage
-
-Download and execute the log analysis script:
-
-```sh
-wget -O inference-against-logs.sh [https://raw.githubusercontent.com/assix/llama-cpp-openwrt/main/scripts/inference-against-logs.sh](https://raw.githubusercontent.com/assix/llama-cpp-openwrt/main/scripts/inference-against-logs.sh)
-chmod +x inference-against-logs.sh
-./inference-against-logs.sh
-```
-
----
 
 ## Compiling from Source
 
 To compile the static binary natively on an `aarch64` host:
 
 ```bash
-chmod +x scripts/build-static.sh
-./scripts/build-static.sh
+chmod +x build-static.sh
+./build-static.sh
 ```
 
 ---
