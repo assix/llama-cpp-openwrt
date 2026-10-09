@@ -20,13 +20,15 @@ Statically linked `llama.cpp` (`llama-cli`) builds and deployment scripts optimi
 
 ## Quick Start on OpenWrt
 
-SSH into your router and execute:
+Pre-built binaries are available in the [v0.1.0 Release](https://github.com/assix/llama-cpp-openwrt/releases/tag/v0.1.0).
+
+SSH into your router:
 
 ```sh
 mkdir -p /root/llm && cd /root/llm
 
-# 1. Download static binary from releases
-wget -O llama-cli [https://github.com/assix/llama-cpp-openwrt/releases/latest/download/llama-cli](https://github.com/assix/llama-cpp-openwrt/releases/latest/download/llama-cli)
+# 1. Download static binary from v0.1.0 release
+wget -O llama-cli [https://github.com/assix/llama-cpp-openwrt/releases/download/v0.1.0/llama-cli](https://github.com/assix/llama-cpp-openwrt/releases/download/v0.1.0/llama-cli)
 chmod +x llama-cli
 
 # 2. Download SmolLM2-135M Instruct (Q4_K_M ~100 MB)
@@ -51,7 +53,7 @@ curl -L -o smollm2-135m-q4_k_m.gguf \
 |---|---|---|
 | `-t` | `3` | Reserves 1 CPU core for critical networking processes (`netifd`, `dnsmasq`). |
 | `-c` | `256` | Caps KV cache allocation to under ~20 MB RAM. |
-| `--no-mmap` | - | Loads weights directly into heap to reduce flash thrashing on `/overlay`. |
+| `--no-mmap` | - | Loads weights directly into heap to reduce flash wear on `/overlay`. |
 | `-n` | `32` | Limits generation length to preserve CPU cycles. |
 
 ---
@@ -70,12 +72,18 @@ chmod +x inference-against-logs.sh
 
 ## Compiling from Source
 
-To compile the static binary natively on `aarch64` (e.g., DGX Spark, Jetson, or ARM cloud instance):
+To compile the static binary natively on an `aarch64` host:
 
 ```bash
 chmod +x scripts/build-static.sh
 ./scripts/build-static.sh
 ```
+
+---
+
+## Releases & Downloads
+
+* **Latest Release:** [v0.1.0](https://github.com/assix/llama-cpp-openwrt/releases/tag/v0.1.0)
 
 ---
 
