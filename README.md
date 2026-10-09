@@ -3,8 +3,8 @@
 Statically linked `llama.cpp` (`llama-cli`) builds and deployment scripts optimized for resource-constrained OpenWrt `aarch64` devices (musl libc), verified on hardware like the GL.iNet Slate 7 (GL-BE3600, Qualcomm IPQ5332).
 
 <p align="center">
-  <img src="images/glinet-slate-7.png" alt="GL.iNet Slate 7 GL-BE3600" width="380">
   <img src="images/terminal-inference.png" alt="llama-cli SmolLM2 inference on OpenWrt" width="480">
+   <img src="images/glinet-slate-7.png" alt="GL.iNet Slate 7 GL-BE3600" width="480">
 </p>
 
 ## Benchmark Performance
